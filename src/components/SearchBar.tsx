@@ -60,7 +60,6 @@ const SearchBar = () => {
     }
   };
   const handleClick = () => {
-    console.log("UI button clicked");
     initiateGptSearch();
   };
 

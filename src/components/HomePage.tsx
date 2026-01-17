@@ -26,8 +26,6 @@ const HomePage = () => {
   const [lastPage, setLastPage] = useState(0);
   const [genres, setGenres] = useState<string | undefined>("");
 
-  // console.log("gpt mode", isGPT);
-
   const fetchMoviesAndSet = useCallback(
     async (params: {
       page: string;
@@ -54,12 +52,12 @@ const HomePage = () => {
           res = await api.get(`/gpt/?${queryParams.toString()}`);
         } else if (params.genre) {
           res = await api.get(
-            `genres/${params.genre}/?${queryParams.toString()}`
+            `genres/${params.genre}/?${queryParams.toString()}`,
           );
         } else if (params.isWatchlist) {
           res = await api.post(
             `/watchlist/?${queryParams.toString()}`,
-            params.watchlistedIDs
+            params.watchlistedIDs,
           );
         } else {
           res = await api.get(`/?${queryParams.toString()}`);
@@ -69,7 +67,7 @@ const HomePage = () => {
           (movie: Movie) => ({
             ...movie,
             watch_listed: params.watchlistedIDs.includes(movie.movie_id),
-          })
+          }),
         );
 
         setMovieData(enrichedMovies);
@@ -81,7 +79,7 @@ const HomePage = () => {
         setLoading(false);
       }
     },
-    []
+    [],
   );
 
   useEffect(() => {
@@ -132,10 +130,8 @@ const HomePage = () => {
       currentLimit,
       currentPage,
       genres,
-    ]
+    ],
   );
-
-  console.log("movie data", movieData);
 
   return (
     <>

@@ -10,12 +10,10 @@ const MovieCard: React.FC<MovieCardProps> = ({
 
   //toggle watchlist
   const toggleWatchlist = (clickedMovieID: string) => {
-    console.log(clickedMovieID);
     const newWatchlist = watchlistedIDs.includes(clickedMovieID)
       ? watchlistedIDs.filter((id) => id !== clickedMovieID)
       : [...watchlistedIDs, clickedMovieID];
     setWatchlistedIDs(newWatchlist);
-    console.log(watchlistedIDs);
   };
 
   return (
