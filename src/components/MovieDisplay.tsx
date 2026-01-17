@@ -40,7 +40,7 @@ const MovieDisplay = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const params = useMemo(
     () => new URLSearchParams(searchParams),
-    [searchParams]
+    [searchParams],
   );
 
   const [debouncedSearchQuery] = useDebounce(searchQuery, 300);
@@ -50,7 +50,7 @@ const MovieDisplay = () => {
         return "";
       }
       if (movieData.length > 0) {
-        return `Genie Results for "${genieQuery}"`;
+        return `Genie Results for "${genieQuery.charAt(0).toUpperCase() + genieQuery.slice(1)}"`;
       }
       if (movieData.length === 0) {
         return "No Genie results";
@@ -124,7 +124,6 @@ const MovieDisplay = () => {
     fetchMoviesAndSet,
     isWatchlist,
   ]);
-  // console.log("display last page", movieData.lastPage);
 
   return (
     <>
@@ -132,7 +131,6 @@ const MovieDisplay = () => {
         {title}
       </div>
       <div className="flex justify-end pr-8 ">
-        <>{console.log(searchQuery)}</>
         {/* results per page dropdon */}
         {Number(lastPage) !== 0 ? (
           <div className="inline-flex bg-gray-500 w-[230px] h-10 pl-4 pt-1 rounded-4xl gap-2">
