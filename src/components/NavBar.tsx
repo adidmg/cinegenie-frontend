@@ -13,7 +13,7 @@ const NavBar = () => {
       {/* home button */}
       <div className="text-white flex justify-center items-center gap-6 mb-5">
         <Link
-          to="http://localhost:5173/"
+          to="/"
           className={`${
             pathname === "/" ? " button-active" : " button-inactive"
           } flex items-center justify-center gap-3`}
@@ -24,7 +24,7 @@ const NavBar = () => {
 
         {/* watchlist button */}
         <Link
-          to="http://localhost:5173/watchlist"
+          to="/watchlist"
           // onClick={resetGPT}
           className={`${
             pathname === "/watchlist" ? "button-active" : "button-inactive"
