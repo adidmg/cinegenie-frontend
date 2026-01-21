@@ -122,7 +122,7 @@ const GenreSidebar = () => {
     },
     {
       name: "Western",
-      icon: "/src/assets/cowboy-hatt.svg",
+      icon: "/assets/cowboy-hat.svg",
       path: "/genres/Western/",
     },
   ];

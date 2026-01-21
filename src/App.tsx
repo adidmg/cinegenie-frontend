@@ -18,7 +18,7 @@ function App() {
             <HomePage></HomePage>
           </div>
         </div>
-        <div className=" mt-2 bg-[url('/sand.jpg')] bg-cover bg-no-repeat bg-center  text-amber-50 rounded-2xl">
+        <div className=" mt-2 bg-[url('/assets/sand.jpg')] bg-cover bg-no-repeat bg-center  text-amber-50 rounded-2xl">
           <div className="h-60  backdrop-blur-xl rounded-t-2xl">
             <Footer></Footer>
           </div>
