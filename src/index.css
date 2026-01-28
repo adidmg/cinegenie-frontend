@@ -57,3 +57,7 @@ position: absolute;
     transform:translateY(-100%)
 }
 
+.footer-li:hover{
+    @apply  scale-110 transition-all duration-650
+}
+
